@@ -19,7 +19,7 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 import { Route, Routes } from 'react-router-dom';
-import { Home } from '../../../../features/home/pages/Home';
+import { Home } from '../../../features/home/pages/Home';
 
 const drawerWidth = 240;
 

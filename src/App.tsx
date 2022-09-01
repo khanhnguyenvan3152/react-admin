@@ -1,13 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import './App.css';
-import { AppCard } from './common/components/Card/AppCard';
-import { AuthenticationLayout } from './common/components/Layout/Authentication/AuthenticationLayout';
-import { DashboardLayout } from './common/components/Layout/Dashboard/DashboardLayout';
+import { AuthenticationLayout } from './common/Layout/Authentication/AuthenticationLayout';
+import { DashboardLayout } from './common/Layout/Dashboard/DashboardLayout';
+import { AuthContext } from './features/authentication/context/AuthProvider';
 
 
 function App() {
-  const [isAuthenticated, setAuthenticated] = useState(true)
-  if (isAuthenticated) {
+  const { auth } = useContext(AuthContext)
+  if (auth) {
     return (
       <div>
         <DashboardLayout></DashboardLayout>
@@ -17,7 +17,6 @@ function App() {
   return (
     <div className="App">
       <AuthenticationLayout>
-        <AppCard title={"Alo"}></AppCard>
       </AuthenticationLayout>
     </div>
   );

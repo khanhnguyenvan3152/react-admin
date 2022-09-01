@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createTheme, StyledEngineProvider } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './features/authentication/context/AuthProvider';
 
 const rootElement = document.getElementById("root") as HTMLElement;
 const root = createRoot(rootElement);
@@ -28,7 +29,9 @@ root.render(
   <StyledEngineProvider injectFirst>
     <ThemeProvider theme={theme}>
       <BrowserRouter>
-        <App/>
+        <AuthProvider>
+          <App />
+        </AuthProvider>
       </BrowserRouter>
     </ThemeProvider>
   </StyledEngineProvider>
